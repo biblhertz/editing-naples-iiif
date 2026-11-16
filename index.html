@@ -14,12 +14,31 @@
     const WINDOW_ID = 'lafrery';
     const ZOOM_MARGIN = 1.6;  // l'annotazione occupa circa 1/1.6 della vista
 
+    // Annotazioni visibili da subito (come sul sito Editing Naples). Si cambia dall'indirizzo:
+    // ?annotazioni=0 le mostra solo al passaggio del mouse; ?annotazioni=1 (predefinito) sempre.
+    // In Mirador si possono poi accendere e spegnere con l'icona a occhio nel pannello Annotazioni.
+    const MOSTRA_ANNOTAZIONI = new URLSearchParams(location.search).get('annotazioni') !== '0';
+
+    // Come sul sito: niente contorno a riposo (stroke trasparente nei <path>),
+    // contorno giallo al passaggio del mouse e alla selezione
+    const YELLOW = '#ffff00';
+
     const viewer = Mirador.viewer({
       id: 'viewer',
       windows: [{
         id: WINDOW_ID,
         manifestId: manifest
       }],
+      themes: {
+        light: { palette: { annotations: {
+          hovered: { strokeStyle: YELLOW, globalAlpha: 1 },
+          selected: { strokeStyle: YELLOW, globalAlpha: 1 }
+        } } },
+        dark: { palette: { annotations: {
+          hovered: { strokeStyle: YELLOW, globalAlpha: 1 },
+          selected: { strokeStyle: YELLOW, globalAlpha: 1 }
+        } } }
+      },
       // Senza proxy il browser chiede le tessere a Digilib tutte insieme e Digilib risponde 503:
       // al massimo 6 richieste per volta, con fino a 3 nuovi tentativi
       osdConfig: {
@@ -28,7 +47,7 @@
         tileRetryDelay: 1500
       },
       window: {
-        highlightAllAnnotations: true,
+        highlightAllAnnotations: MOSTRA_ANNOTAZIONI,
         sideBarOpenByDefault: true,
         defaultSideBarPanel: 'annotations'
       }
