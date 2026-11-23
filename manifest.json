@@ -206,20 +206,20 @@
       ],
       "annotations": [
         {
-          "id": "https://biblhertz.github.io/editing-naples-iiif/annotations-gazetteer.json",
-          "type": "AnnotationPage",
-          "label": {
-            "en": [
-              "Gazetteer: other maps and guidebooks"
-            ]
-          }
-        },
-        {
           "id": "https://biblhertz.github.io/editing-naples-iiif/annotations-legend.json",
           "type": "AnnotationPage",
           "label": {
             "en": [
               "Map legend"
+            ]
+          }
+        },
+        {
+          "id": "https://biblhertz.github.io/editing-naples-iiif/annotations-gazetteer.json",
+          "type": "AnnotationPage",
+          "label": {
+            "en": [
+              "Gazetteer: other maps and guidebooks"
             ]
           }
         }

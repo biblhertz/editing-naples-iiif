@@ -20,20 +20,21 @@ The annotations are split into two AnnotationPages that target the same polygons
 
 | URL parameter | Effect |
 | --- | --- |
-| `?layer=1` (default) | Legend layer only (`manifest-legend.json`). |
-| `?layer=2` | Legend and gazetteer layers (`manifest.json`). |
+| `?layer=legend` (default) | Legend layer only (`manifest-legend.json`). |
+| `?layer=gazetteer` | Gazetteer layer only (`manifest-gazetteer.json`). |
 | `?annotations=0` | Polygons are drawn on hover only, not all at once. |
 
-The two buttons above the viewer switch between the layers. Selecting an annotation, on the map or
-in the list, zooms to it.
+The two buttons above the viewer switch between the layers, one at a time. Selecting an annotation,
+on the map or in the list, zooms to it.
 
 ## Files
 
 Published site (GitHub Pages serves the repository root):
 
 - `index.html`: Mirador 3.4.3 (loaded from unpkg) and the layer switch.
-- `manifest.json`: IIIF manifest, one canvas, both annotation pages.
-- `manifest-legend.json`: the same manifest with the legend layer only.
+- `manifest-legend.json`, `manifest-gazetteer.json`: IIIF manifests, one canvas, with a single
+  annotation page each. These are the ones the viewer loads.
+- `manifest.json`: the same manifest with both annotation pages, for other IIIF viewers.
 - `annotations-legend.json`, `annotations-gazetteer.json`: the annotation pages.
 - `iiif/lafreri/info.json`: static IIIF Image API 3 `info.json` for the map image.
 
@@ -80,7 +81,7 @@ The identifiers in the generated files contain the base URL, so do not commit a 
 
 ## Known limitations
 
-- Mirador 3.4.3 cannot switch individual annotation pages on and off, hence the two manifests.
+- Mirador 3.4.3 cannot switch individual annotation pages on and off, hence one manifest per layer.
 - The link between an annotation and its gazetteer entry is not available in the source data for
   this map, so the gazetteer layer was built by hand for a single place.
 - Digilib currently returns an empty `info.json` for this image, so a static copy is served from

@@ -10,6 +10,7 @@ the /map?name=... page) and writes them as two annotation layers:
                                 the annotations listed in gazetteer.json, on the same polygon
   - manifest.json               IIIF v3 manifest, one canvas, both annotation pages
   - manifest-legend.json        the same manifest with layer 1 only
+  - manifest-gazetteer.json     the same manifest with layer 2 only
 
 Typical use (from the script folder):
   python3 convert.py --static --base https://USER.github.io/REPO/   # static hosting (GitHub Pages)
@@ -111,22 +112,17 @@ def static_info(service_id, w, h):
     }
 
 
-def svg_path(coords, w, h, group, filled=True):
+def svg_path(coords, w, h, group):
     # Mirador 3 draws only the <path> elements of the SvgSelector, not <polygon>.
     # Mirador always strokes the outline (black if `stroke` is missing; `stroke='none'` is not
     # accepted): `transparent` hides it as on the site; on hover and on selection Mirador
     # recolours it with the theme palette, `stroke-width` wide.
-    # `filled=False` (layer 2): same polygon without fill, otherwise the colour of layer 1
-    # would be painted twice.
-    if filled:
-        color = GROUP_COLORS.get(group)
-        fill = (f"fill='{color or DEFAULT_COLOR}' "
-                f"fill-opacity='{FILL_OPACITY if color else DEFAULT_OPACITY}'")
-    else:
-        fill = "fill='none'"
+    color = GROUP_COLORS.get(group)
+    opacity = FILL_OPACITY if color else DEFAULT_OPACITY
     pts = " L ".join(f"{x * w:.1f} {y * h:.1f}" for x, y in coords)
     return ("<svg xmlns='http://www.w3.org/2000/svg'>"
-            f"<path d='M {pts} Z' {fill} stroke='transparent' stroke-width='2'/></svg>")
+            f"<path d='M {pts} Z' fill='{color or DEFAULT_COLOR}' fill-opacity='{opacity}' "
+            "stroke='transparent' stroke-width='2'/></svg>")
 
 
 def xywh(bbox, w, h):
@@ -159,7 +155,8 @@ def gazetteer_html(g):
     return "".join(parts)
 
 
-def target(row, w, h, canvas_id, filled=True):
+def target(row, w, h, canvas_id):
+    """The polygon on the canvas: both layers use exactly the same target."""
     return {
         "type": "SpecificResource",
         "source": canvas_id,
@@ -167,7 +164,7 @@ def target(row, w, h, canvas_id, filled=True):
             {"type": "FragmentSelector", "conformsTo": "http://www.w3.org/TR/media-frags/",
              "value": xywh(row["bbox"], w, h)},
             {"type": "SvgSelector", "value": svg_path(
-                row["shape"], w, h, row.get("groupname"), filled)},
+                row["shape"], w, h, row.get("groupname"))},
         ],
     }
 
@@ -218,7 +215,7 @@ def gazetteer_annotation(row, g, w, h, base, canvas_id):
             # machine-readable link to the gazetteer entry
             {"type": "SpecificResource", "source": g["uri"], "purpose": "identifying"},
         ],
-        "target": target(row, w, h, canvas_id, filled=False),
+        "target": target(row, w, h, canvas_id),
     }
 
 
@@ -286,24 +283,24 @@ def main():
 
     rows = [r for r in data["rows"] if r.get("state", 1) == 1 and r.get("shape")]
     layers = [
-        ("annotations-legend.json", "Map legend",
+        ("legend", "Map legend",
          [legend_annotation(r, w, h, a.base, canvas_id) for r in rows]),
-        ("annotations-gazetteer.json", "Gazetteer: other maps and guidebooks",
+        ("gazetteer", "Gazetteer: other maps and guidebooks",
          [gazetteer_annotation(r, gaz[str(r["id"])], w, h, a.base, canvas_id)
           for r in rows if str(r["id"]) in gaz]),
     ]
     pages = {
-        name: {
+        key: {
             "@context": "http://iiif.io/api/presentation/3/context.json",
-            "id": a.base + name,
+            "id": f"{a.base}annotations-{key}.json",
             "type": "AnnotationPage",
             "label": {"en": [label]},
             "items": items,
         }
-        for name, label, items in layers
+        for key, label, items in layers
     }
-    page_refs = [{"id": p["id"], "type": "AnnotationPage", "label": p["label"]}
-                 for p in pages.values()]
+    page_refs = {key: {"id": p["id"], "type": "AnnotationPage", "label": p["label"]}
+                 for key, p in pages.items()}
 
     meta = [
         ("Title", info.get("name")), ("Author", info.get("creator")),
@@ -339,9 +336,7 @@ def main():
                              "service": [{"id": service, "type": "ImageService3", "profile": "level2"}]},
                 }],
             }],
-            # Gazetteer first: Mirador lists the pages in this order and, between two identical
-            # polygons, a click on the map selects the annotation of the first page
-            "annotations": page_refs[::-1],
+            "annotations": list(page_refs.values()),
         }],
     }
     if info.get("doi"):
@@ -349,14 +344,19 @@ def main():
                                 "label": {"none": ["DOI"]}}]
 
     # Mirador 3.4.3 cannot switch a single AnnotationPage on and off (the overlay draws all the
-    # pages of the canvas): showing layer 1 alone needs a second manifest
-    legend = copy.deepcopy(manifest)
-    legend["id"] = f"{a.base}manifest-legend.json"
-    legend["label"] = {"en": [manifest["label"]["en"][0] + " (legend only)"]}
-    legend["items"][0]["annotations"] = page_refs[:1]
+    # pages of the canvas): the viewer loads one manifest per layer, each with a single page.
+    # manifest.json, with both pages, is for other IIIF viewers.
+    files = {"manifest.json": manifest}
+    for key, ref in page_refs.items():
+        single = copy.deepcopy(manifest)
+        single["id"] = f"{a.base}manifest-{key}.json"
+        single["label"] = {"en": [f"{manifest['label']['en'][0]} ({key} only)"]}
+        single["items"][0]["annotations"] = [ref]
+        files[f"manifest-{key}.json"] = single
+        files[f"annotations-{key}.json"] = pages[key]
 
     os.makedirs(a.out, exist_ok=True)
-    for name, obj in {"manifest.json": manifest, "manifest-legend.json": legend, **pages}.items():
+    for name, obj in files.items():
         with open(os.path.join(a.out, name), "w", encoding="utf-8") as f:
             json.dump(clean(obj), f, ensure_ascii=False, indent=2)
     if a.static:

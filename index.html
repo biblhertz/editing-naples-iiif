@@ -18,8 +18,8 @@
 <body>
   <nav id="layers" aria-label="Annotation layers">
     <span>Annotations:</span>
-    <a data-layer="1" title="Only the relation between the map and its own legend">Legend</a>
-    <a data-layer="2" title="Also the gazetteer links: other maps and historical guidebooks">Legend + Gazetteer</a>
+    <a data-layer="legend" title="The relation between the map and its own legend">Legend</a>
+    <a data-layer="gazetteer" title="The gazetteer links: other maps and historical guidebooks">Gazetteer</a>
   </nav>
   <div id="viewer"></div>
   <script src="https://unpkg.com/mirador@3.4.3/dist/mirador.min.js"></script>
@@ -28,12 +28,12 @@
     const WINDOW_ID = 'lafrery';
     const ZOOM_MARGIN = 1.6;  // the annotation takes up about 1/1.6 of the view
 
-    // Annotation layers: ?layer=1 (default) only the map and its legend; ?layer=2 also the
-    // gazetteer. Mirador 3.4.3 cannot switch a single AnnotationPage off (the overlay draws all
-    // the pages of the canvas), so each layer has its own manifest and the button reloads.
-    const LAYER = params.get('layer') === '2' ? '2' : '1';
-    const manifest = new URL(LAYER === '2' ? 'manifest.json' : 'manifest-legend.json',
-                             window.location.href).href;
+    // Annotation layers, one at a time: ?layer=legend (default) the map and its legend;
+    // ?layer=gazetteer the gazetteer links. Mirador 3.4.3 cannot switch a single AnnotationPage
+    // off (the overlay draws all the pages of the canvas), so each layer has its own manifest
+    // with a single page and the button reloads.
+    const LAYER = params.get('layer') === 'gazetteer' ? 'gazetteer' : 'legend';
+    const manifest = new URL(`manifest-${LAYER}.json`, window.location.href).href;
     document.querySelectorAll('#layers a').forEach(a => {
       const p = new URLSearchParams(params);
       p.set('layer', a.dataset.layer);
@@ -97,8 +97,8 @@
       }));
     }
 
-    // xywh box of an annotation, looked up in all the AnnotationPages loaded by Mirador
-    // (one or two, depending on the layer): no file names to keep in sync
+    // xywh box of an annotation, looked up in the AnnotationPages loaded by Mirador,
+    // whichever the layer: no file names to keep in sync
     function boxOf(id) {
       const pages = Object.values(viewer.store.getState().annotations || {}).flatMap(Object.values);
       for (const page of pages) {
