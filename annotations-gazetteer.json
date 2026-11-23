@@ -1,0 +1,45 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://biblhertz.github.io/editing-naples-iiif/annotations-gazetteer.json",
+  "type": "AnnotationPage",
+  "label": {
+    "en": [
+      "Gazetteer: other maps and guidebooks"
+    ]
+  },
+  "items": [
+    {
+      "id": "https://biblhertz.github.io/editing-naples-iiif/anno/5940/gazetteer",
+      "type": "Annotation",
+      "motivation": "linking",
+      "body": [
+        {
+          "type": "TextualBody",
+          "value": "<p><b>Gazetteer:</b> <a href='https://maps.biblhertz.it/top/18'>Chiesa e convento di S. Chiara</a> [18]</p><p>Location: Napoli, Decumano<br/>Category: chiesa<br/>Dates: 1310-<br/>Notes: Chiesa di Santa Chiara</p><p><b>Historical guidebooks</b><br/><a href='https://maps.biblhertz.it/guide/destefano#par_312'>De Stefano (1560), 179v</a>: «Santa Chiara»<br/><a href='https://maps.biblhertz.it/guide/tarcagnota#par_25'>Tarcagnota (1566), 10r</a>: «Santa Chiara»<br/><a href='https://maps.biblhertz.it/guide/tarcagnota#par_25'>Tarcagnota (1566), 10v</a>: «Santa Chiara»<br/><a href='https://maps.biblhertz.it/guide/tarcagnota#par_65'>Tarcagnota (1566), 28v</a>: «chiesa»<br/><a href='https://maps.biblhertz.it/guide/celano#par_III-121'>Celano (1692), 63</a>: «chiesa regale di Santa Chiara»<br/><a href='https://maps.biblhertz.it/guide/sigismondo#par_I-117'>Sigismondo (1788), 254</a>: «chiesa»<br/><a href='https://maps.biblhertz.it/guide/sigismondo#h2_I-12'>Sigismondo (1788), 254</a>: «Santa Chiara»</p><p><b>Other historical maps</b><br/><a href='https://maps.biblhertz.it/map?name=noia&amp;id=95'>Duca di Noja 1775, n. 107</a>: «Chiesa di Santa Chiara, monasterio di dame monache e convento di francescani, che la servono. Questa fu anticamente sacra al Santissimo Corpo di Cristo, e fu fondata dal re Roberto Angioino e da Sancia d’Aragona sua moglie; in questa chiesa èvvi ’l sepolcro del mentovato re. Ne’ tempi antichi quivi univasi il Sacro Regio Consiglio a decidere le cause de’ napolitani.»<br/><a href='https://maps.biblhertz.it/map?name=baratta&amp;id=1298'>Baratta 1627/1670, n. 99</a>: «S. Chiara»<br/><a href='https://maps.biblhertz.it/map?name=stinemolen&amp;id=1518'>Stinemolen 1582</a></p>",
+          "format": "text/html",
+          "purpose": "describing"
+        },
+        {
+          "type": "SpecificResource",
+          "source": "https://maps.biblhertz.it/top/18",
+          "purpose": "identifying"
+        }
+      ],
+      "target": {
+        "type": "SpecificResource",
+        "source": "https://biblhertz.github.io/editing-naples-iiif/canvas/1",
+        "selector": [
+          {
+            "type": "FragmentSelector",
+            "conformsTo": "http://www.w3.org/TR/media-frags/",
+            "value": "xywh=6214,3039,277,241"
+          },
+          {
+            "type": "SvgSelector",
+            "value": "<svg xmlns='http://www.w3.org/2000/svg'><path d='M 6337.4 3039.1 L 6365.4 3058.6 L 6453.0 3096.7 L 6457.4 3086.0 L 6470.7 3079.8 L 6491.0 3092.2 L 6489.3 3137.4 L 6410.5 3271.1 L 6387.4 3276.4 L 6327.2 3279.9 L 6305.1 3275.5 L 6213.9 3276.4 L 6224.6 3151.5 L 6231.6 3151.5 L 6232.5 3090.5 L 6302.5 3094.9 L 6314.1 3055.6 Z' fill='none' stroke='transparent' stroke-width='2'/></svg>"
+          }
+        ]
+      }
+    }
+  ]
+}

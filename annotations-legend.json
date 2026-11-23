@@ -1,7 +1,12 @@
 {
   "@context": "http://iiif.io/api/presentation/3/context.json",
-  "id": "https://biblhertz.github.io/editing-naples-iiif/annotations.json",
+  "id": "https://biblhertz.github.io/editing-naples-iiif/annotations-legend.json",
   "type": "AnnotationPage",
+  "label": {
+    "en": [
+      "Map legend"
+    ]
+  },
   "items": [
     {
       "id": "https://biblhertz.github.io/editing-naples-iiif/anno/5937",
@@ -15,7 +20,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Arcivescovado</b> [n. 17]</p><p>Legenda della mappa: «Il Vescovado»</p>",
+          "value": "<p><b>Arcivescovado</b> [no. 17]</p><p>Map legend: «Il Vescovado»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -53,7 +58,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Arsenale</b> [n. 15]</p><p>Legenda della mappa: «L&#x27;Arsenale»</p>",
+          "value": "<p><b>Arsenale</b> [no. 15]</p><p>Map legend: «L&#x27;Arsenale»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -91,7 +96,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Baluardo del Carmine</b> [n. 14]</p><p>Legenda della mappa: «Baruardo del Carmine»</p>",
+          "value": "<p><b>Baluardo del Carmine</b> [no. 14]</p><p>Map legend: «Baruardo del Carmine»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -129,7 +134,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Castel Nuovo</b> [n. 10]</p><p>Legenda della mappa: «Il Castel Novo»</p>",
+          "value": "<p><b>Castel Nuovo</b> [no. 10]</p><p>Map legend: «Il Castel Novo»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -167,7 +172,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Castel Sant&#x27;Elmo</b> [n. 11]</p><p>Legenda della mappa: «Castel San Martino»</p>",
+          "value": "<p><b>Castel Sant&#x27;Elmo</b> [no. 11]</p><p>Map legend: «Castel San Martino»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -205,7 +210,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Castel dell&#x27;Ovo</b> [n. 12]</p><p>Legenda della mappa: «Castel dell&#x27;Ovo»</p>",
+          "value": "<p><b>Castel dell&#x27;Ovo</b> [no. 12]</p><p>Map legend: «Castel dell&#x27;Ovo»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -243,7 +248,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Certosa di S. Martino</b> [n. 41]</p><p>Legenda della mappa: «S. Martino»</p>",
+          "value": "<p><b>Certosa di S. Martino</b> [no. 41]</p><p>Map legend: «S. Martino»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -281,7 +286,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Complesso di S. Maria del Popolo agli Incurabili</b> [n. 38]</p><p>Legenda della mappa: «L&#x27;Spedale di S. M.a d&#x27;Incur.li»</p>",
+          "value": "<p><b>Complesso di S. Maria del Popolo agli Incurabili</b> [no. 38]</p><p>Map legend: «L&#x27;Spedale di S. M.a d&#x27;Incur.li»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -319,7 +324,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Dogana</b> [n. 16]</p><p>Legenda della mappa: «La Dogana»</p>",
+          "value": "<p><b>Dogana</b> [no. 16]</p><p>Map legend: «La Dogana»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -357,7 +362,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Fontana del Molo Grande</b> [n. 69]</p><p>Legenda della mappa: «Fonte del Molo Grando [sic]»</p>",
+          "value": "<p><b>Fontana del Molo Grande</b> [no. 69]</p><p>Map legend: «Fonte del Molo Grando [sic]»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -400,7 +405,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Fontana del Seggio di Porto</b> [n. 71]</p><p>Legenda della mappa: «Fonte di Seggio di Porto»</p>",
+          "value": "<p><b>Fontana del Seggio di Porto</b> [no. 71]</p><p>Map legend: «Fonte di Seggio di Porto»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -438,7 +443,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Fontana dell&#x27;Annunziata</b> [n. 72]</p><p>Legenda della mappa: «Fonte dell&#x27;Anontiata»</p>",
+          "value": "<p><b>Fontana dell&#x27;Annunziata</b> [no. 72]</p><p>Map legend: «Fonte dell&#x27;Anontiata»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -476,7 +481,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Fontana dell&#x27;Olmo</b> [n. 70]</p><p>Legenda della mappa: «Fonte di Piazza dell&#x27;Olmo»</p>",
+          "value": "<p><b>Fontana dell&#x27;Olmo</b> [no. 70]</p><p>Map legend: «Fonte di Piazza dell&#x27;Olmo»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -514,7 +519,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Fontana della Sellaria</b> [n. 74]</p><p>Legenda della mappa: «Fonte della Salaria»</p>",
+          "value": "<p><b>Fontana della Sellaria</b> [no. 74]</p><p>Map legend: «Fonte della Salaria»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -552,7 +557,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Fontana di Piazza Mercato</b> [n. 73]</p><p>Legenda della mappa: «Fonte della Piazza di Mercato»</p>",
+          "value": "<p><b>Fontana di Piazza Mercato</b> [no. 73]</p><p>Map legend: «Fonte della Piazza di Mercato»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -590,7 +595,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Gesù Vecchio</b> [n. 32]</p><p>Legenda della mappa: «Il Gesù»</p>",
+          "value": "<p><b>Gesù Vecchio</b> [no. 32]</p><p>Map legend: «Il Gesù»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -628,7 +633,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Molo Grande</b> [n. 1]</p><p>Legenda della mappa: «Il Molo Grande»</p>",
+          "value": "<p><b>Molo Grande</b> [no. 1]</p><p>Map legend: «Il Molo Grande»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -676,7 +681,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Molo Piccolo</b> [n. 2]</p><p>Legenda della mappa: «Il Molo piccolo»</p>",
+          "value": "<p><b>Molo Piccolo</b> [no. 2]</p><p>Map legend: «Il Molo piccolo»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -714,7 +719,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Pal.o del Duca di Atri</b> [n. 52]</p><p>Legenda della mappa: «Pal.o del Duca di Atri»</p>",
+          "value": "<p><b>Pal.o del Duca di Atri</b> [no. 52]</p><p>Map legend: «Pal.o del Duca di Atri»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -752,7 +757,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Palazzo Orsini di Gravina</b> [n. 49]</p><p>Legenda della mappa: «Pal.o del Duca di Gravina»</p>",
+          "value": "<p><b>Palazzo Orsini di Gravina</b> [no. 49]</p><p>Map legend: «Pal.o del Duca di Gravina»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -790,7 +795,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Palazzo Pappacoda</b> [n. 57]</p><p>Legenda della mappa: «Pal.o di Pardo Pappacoda»</p>",
+          "value": "<p><b>Palazzo Pappacoda</b> [no. 57]</p><p>Map legend: «Pal.o di Pardo Pappacoda»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -828,7 +833,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Palazzo Ravaschieri</b> [n. 54]</p><p>Legenda della mappa: «Pal.o de Ravaschieri»</p>",
+          "value": "<p><b>Palazzo Ravaschieri</b> [no. 54]</p><p>Map legend: «Pal.o de Ravaschieri»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -866,7 +871,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Palazzo Vicereale</b> [n. 48]</p><p>Legenda della mappa: «Palazo del Vicere»</p>",
+          "value": "<p><b>Palazzo Vicereale</b> [no. 48]</p><p>Map legend: «Palazo del Vicere»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -904,7 +909,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Palazzo del Principe di Salerno</b> [n. 50]</p><p>Legenda della mappa: «Pal.o del Prenc. di Salerna»</p>",
+          "value": "<p><b>Palazzo del Principe di Salerno</b> [no. 50]</p><p>Map legend: «Pal.o del Prenc. di Salerna»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -942,7 +947,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Palazzo del Principe di Stigliano</b> [n. 55]</p><p>Legenda della mappa: «Pal.o del Prenc. di Stigliano»</p>",
+          "value": "<p><b>Palazzo del Principe di Stigliano</b> [no. 55]</p><p>Map legend: «Pal.o del Prenc. di Stigliano»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -980,7 +985,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Palazzo del Principe di Sulmona</b> [n. 53]</p><p>Legenda della mappa: «Pal.o del Prenc. di Sulm.a»</p>",
+          "value": "<p><b>Palazzo del Principe di Sulmona</b> [no. 53]</p><p>Map legend: «Pal.o del Prenc. di Sulm.a»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1018,7 +1023,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Palazzo della Vicaria Vecchia</b> [n. 47]</p><p>Legenda della mappa: «Palazo della Vicaria»</p>",
+          "value": "<p><b>Palazzo della Vicaria Vecchia</b> [no. 47]</p><p>Map legend: «Palazo della Vicaria»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1056,7 +1061,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Palazzo di Alfonso Sanchez marchese di Grottola</b> [n. 58]</p><p>Legenda della mappa: «Pal.o del Tesoriero»</p>",
+          "value": "<p><b>Palazzo di Alfonso Sanchez marchese di Grottola</b> [no. 58]</p><p>Map legend: «Pal.o del Tesoriero»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1094,7 +1099,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Palazzo di Diomede Carafa</b> [n. 51]</p><p>Legenda della mappa: «Pal.o del Duca Matalone»</p>",
+          "value": "<p><b>Palazzo di Diomede Carafa</b> [no. 51]</p><p>Map legend: «Pal.o del Duca Matalone»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1132,7 +1137,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Piazza Olmo</b> [n. 60]</p><p>Legenda della mappa: «Piazza dell&#x27;Olmo»</p>",
+          "value": "<p><b>Piazza Olmo</b> [no. 60]</p><p>Map legend: «Piazza dell&#x27;Olmo»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1170,7 +1175,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Piazza de Lansieri</b> [n. 61]</p><p>Legenda della mappa: «Piazza de Lansieri»</p>",
+          "value": "<p><b>Piazza de Lansieri</b> [no. 61]</p><p>Map legend: «Piazza de Lansieri»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1208,7 +1213,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Piazza della Sellaria</b> [n. 63]</p><p>Legenda della mappa: «Strada della Salaria»</p>",
+          "value": "<p><b>Piazza della Sellaria</b> [no. 63]</p><p>Map legend: «Strada della Salaria»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1246,7 +1251,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Piazza di S. Lorenzo</b> [n. 62]</p><p>Legenda della mappa: «Di S. Lorenzo Mercato Vecchio»</p>",
+          "value": "<p><b>Piazza di S. Lorenzo</b> [no. 62]</p><p>Map legend: «Di S. Lorenzo Mercato Vecchio»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1284,7 +1289,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Porta Capuana</b> [n. 5]</p><p>Legenda della mappa: «Porta Capuana»</p>",
+          "value": "<p><b>Porta Capuana</b> [no. 5]</p><p>Map legend: «Porta Capuana»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1322,7 +1327,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Porta Nolana</b> [n. 4]</p><p>Legenda della mappa: «Porta Nolana»</p>",
+          "value": "<p><b>Porta Nolana</b> [no. 4]</p><p>Map legend: «Porta Nolana»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1360,7 +1365,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Porta Reale Vecchia</b> [n. 8]</p><p>Legenda della mappa: «Porta Reale»</p>",
+          "value": "<p><b>Porta Reale Vecchia</b> [no. 8]</p><p>Map legend: «Porta Reale»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1398,7 +1403,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Porta Romana</b> [n. 9]</p><p>Legenda della mappa: «Porta Romana»</p>",
+          "value": "<p><b>Porta Romana</b> [no. 9]</p><p>Map legend: «Porta Romana»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1436,7 +1441,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Porta S. Gennaro</b> [n. 6]</p><p>Legenda della mappa: «Porta S.to Genaro»</p>",
+          "value": "<p><b>Porta S. Gennaro</b> [no. 6]</p><p>Map legend: «Porta S.to Genaro»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1474,7 +1479,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Porta S.ta M.a Constantinopoli</b> [n. 7]</p><p>Legenda della mappa: «Porta S.ta M.a Constantinopoli»</p>",
+          "value": "<p><b>Porta S.ta M.a Constantinopoli</b> [no. 7]</p><p>Map legend: «Porta S.ta M.a Constantinopoli»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1522,7 +1527,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Porta del Mercato</b> [n. 3]</p><p>Legenda della mappa: «Porta del Mercato»</p>",
+          "value": "<p><b>Porta del Mercato</b> [no. 3]</p><p>Map legend: «Porta del Mercato»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1570,7 +1575,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Presidio di Pizzofalcone</b> [n. 56]</p><p>Legenda della mappa: «Palazzo Pizzofalcone»</p>",
+          "value": "<p><b>Presidio di Pizzofalcone</b> [no. 56]</p><p>Map legend: «Palazzo Pizzofalcone»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1608,7 +1613,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Agostino alla Zecca</b> [n. 24]</p><p>Legenda della mappa: «S. Domenico [sic!]»</p>",
+          "value": "<p><b>S. Agostino alla Zecca</b> [no. 24]</p><p>Map legend: «S. Domenico [sic!]»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1646,7 +1651,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Caterina a Formiello</b> [n. 30]</p><p>Legenda della mappa: «S. Caterina formella»</p>",
+          "value": "<p><b>S. Caterina a Formiello</b> [no. 30]</p><p>Map legend: «S. Caterina formella»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1684,7 +1689,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Chiara</b> [n. 21]</p><p>Legenda della mappa: «S. Chiara»</p><p><b>Gazetteer:</b> <a href='https://maps.biblhertz.it/top/18'>Chiesa e convento di S. Chiara</a> [18]</p><p>Luogo: Napoli, Decumano<br/>Categoria: chiesa<br/>Date: 1310-<br/>Note: Chiesa di Santa Chiara</p><p><b>Guide storiche</b><br/><a href='https://maps.biblhertz.it/guide/destefano#par_312'>De Stefano (1560), 179v</a>: «Santa Chiara»<br/><a href='https://maps.biblhertz.it/guide/tarcagnota#par_25'>Tarcagnota (1566), 10r</a>: «Santa Chiara»<br/><a href='https://maps.biblhertz.it/guide/tarcagnota#par_25'>Tarcagnota (1566), 10v</a>: «Santa Chiara»<br/><a href='https://maps.biblhertz.it/guide/tarcagnota#par_65'>Tarcagnota (1566), 28v</a>: «chiesa»<br/><a href='https://maps.biblhertz.it/guide/celano#par_III-121'>Celano (1692), 63</a>: «chiesa regale di Santa Chiara»<br/><a href='https://maps.biblhertz.it/guide/sigismondo#par_I-117'>Sigismondo (1788), 254</a>: «chiesa»<br/><a href='https://maps.biblhertz.it/guide/sigismondo#h2_I-12'>Sigismondo (1788), 254</a>: «Santa Chiara»</p><p><b>Altre mappe storiche</b><br/><a href='https://maps.biblhertz.it/map?name=noia&amp;id=95'>Duca di Noja 1775, n. 107</a>: «Chiesa di Santa Chiara, monasterio di dame monache e convento di francescani, che la servono. Questa fu anticamente sacra al Santissimo Corpo di Cristo, e fu fondata dal re Roberto Angioino e da Sancia d’Aragona sua moglie; in questa chiesa èvvi ’l sepolcro del mentovato re. Ne’ tempi antichi quivi univasi il Sacro Regio Consiglio a decidere le cause de’ napolitani.»<br/><a href='https://maps.biblhertz.it/map?name=baratta&amp;id=1298'>Baratta 1627/1670, n. 99</a>: «S. Chiara»<br/><a href='https://maps.biblhertz.it/map?name=stinemolen&amp;id=1518'>Stinemolen 1582</a></p>",
+          "value": "<p><b>S. Chiara</b> [no. 21]</p><p>Map legend: «S. Chiara»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1695,18 +1700,13 @@
         },
         {
           "type": "TextualBody",
-          "value": "chiesa,",
+          "value": "chiesa",
           "purpose": "tagging"
         },
         {
           "type": "TextualBody",
           "value": "chiostro",
           "purpose": "tagging"
-        },
-        {
-          "type": "SpecificResource",
-          "source": "https://maps.biblhertz.it/top/18",
-          "purpose": "identifying"
         }
       ],
       "target": {
@@ -1737,7 +1737,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Croce di Palazzo</b> [n. 39]</p><p>Legenda della mappa: «La Croce»</p>",
+          "value": "<p><b>S. Croce di Palazzo</b> [no. 39]</p><p>Map legend: «La Croce»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1775,7 +1775,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Domenico</b> [n. 22]</p><p>Legenda della mappa: «S. Agostino [sic!]»</p>",
+          "value": "<p><b>S. Domenico</b> [no. 22]</p><p>Map legend: «S. Agostino [sic!]»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1813,7 +1813,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Eligio</b> [n. 27]</p><p>Legenda della mappa: «Lo Spedale di Sant&#x27;Alò»</p>",
+          "value": "<p><b>S. Eligio</b> [no. 27]</p><p>Map legend: «Lo Spedale di Sant&#x27;Alò»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1851,7 +1851,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Giacomo degli Spagnoli</b> [n. 37]</p><p>Legenda della mappa: «L&#x27; Spedale di S. Giac.o de spag.li»</p>",
+          "value": "<p><b>S. Giacomo degli Spagnoli</b> [no. 37]</p><p>Map legend: «L&#x27; Spedale di S. Giac.o de spag.li»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1889,7 +1889,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Giorgio Maggiore</b> [n. 23]</p><p>Legenda della mappa: «S. Giorgio»</p>",
+          "value": "<p><b>S. Giorgio Maggiore</b> [no. 23]</p><p>Map legend: «S. Giorgio»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1927,7 +1927,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Giovanni Maggiore</b> [n. 20]</p><p>Legenda della mappa: «S. Gio. Mag.re»</p>",
+          "value": "<p><b>S. Giovanni Maggiore</b> [no. 20]</p><p>Map legend: «S. Gio. Mag.re»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -1965,7 +1965,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Giovanni a Carbonara</b> [n. 28]</p><p>Legenda della mappa: «S. Giov. di Carbonara»</p>",
+          "value": "<p><b>S. Giovanni a Carbonara</b> [no. 28]</p><p>Map legend: «S. Giov. di Carbonara»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2003,7 +2003,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Lorenzo Maggiore</b> [n. 18]</p><p>Legenda della mappa: «S.to Lorenzo»</p>",
+          "value": "<p><b>S. Lorenzo Maggiore</b> [no. 18]</p><p>Map legend: «S.to Lorenzo»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2041,7 +2041,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Luigi di Palazzo</b> [n. 40]</p><p>Legenda della mappa: «S. Luigi»</p>",
+          "value": "<p><b>S. Luigi di Palazzo</b> [no. 40]</p><p>Map legend: «S. Luigi»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2079,7 +2079,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Maria del Carmine Maggiore</b> [n. 26]</p><p>Legenda della mappa: «S. Maria del Carmine»</p>",
+          "value": "<p><b>S. Maria del Carmine Maggiore</b> [no. 26]</p><p>Map legend: «S. Maria del Carmine»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2117,7 +2117,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Maria dell&#x27;Incoronata</b> [n. 36]</p><p>Legenda della mappa: «La Incoronata»</p>",
+          "value": "<p><b>S. Maria dell&#x27;Incoronata</b> [no. 36]</p><p>Map legend: «La Incoronata»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2155,7 +2155,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Maria di Monteoliveto</b> [n. 34]</p><p>Legenda della mappa: «Monte Oliveto»</p>",
+          "value": "<p><b>S. Maria di Monteoliveto</b> [no. 34]</p><p>Map legend: «Monte Oliveto»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2193,7 +2193,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Maria la Nova</b> [n. 35]</p><p>Legenda della mappa: «S. Maria nova»</p>",
+          "value": "<p><b>S. Maria la Nova</b> [no. 35]</p><p>Map legend: «S. Maria nova»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2231,7 +2231,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Paolo</b> [n. 19]</p><p>Legenda della mappa: «S. Pavolo»</p>",
+          "value": "<p><b>S. Paolo</b> [no. 19]</p><p>Map legend: «S. Pavolo»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2269,7 +2269,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Pietro Martire</b> [n. 33]</p><p>Legenda della mappa: «S. Pietro martire»</p>",
+          "value": "<p><b>S. Pietro Martire</b> [no. 33]</p><p>Map legend: «S. Pietro martire»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2307,7 +2307,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>S. Pietro ad Aram</b> [n. 29]</p><p>Legenda della mappa: «S. Pietro ad Aras»</p>",
+          "value": "<p><b>S. Pietro ad Aram</b> [no. 29]</p><p>Map legend: «S. Pietro ad Aras»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2345,7 +2345,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>SS. Severino e Sossio</b> [n. 31]</p><p>Legenda della mappa: «S. Severino»</p>",
+          "value": "<p><b>SS. Severino e Sossio</b> [no. 31]</p><p>Map legend: «S. Severino»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2383,7 +2383,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>SS. Trinità di Palazzo</b> [n. 41]</p><p>Legenda della mappa: «SS. Trinità »</p>",
+          "value": "<p><b>SS. Trinità di Palazzo</b> [no. 41]</p><p>Map legend: «SS. Trinità »</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2421,7 +2421,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Santa Casa della SS. Annunziata</b> [n. 25]</p><p>Legenda della mappa: «Lo Spedale dell&#x27;Anontiata»</p>",
+          "value": "<p><b>Santa Casa della SS. Annunziata</b> [no. 25]</p><p>Map legend: «Lo Spedale dell&#x27;Anontiata»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2459,7 +2459,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Seggio di Capuana</b> [n. 42]</p><p>Legenda della mappa: «Seggio Capuano»</p>",
+          "value": "<p><b>Seggio di Capuana</b> [no. 42]</p><p>Map legend: «Seggio Capuano»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2497,7 +2497,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Seggio di Montagna</b> [n. 43]</p><p>Legenda della mappa: «Seggio di Montagna»</p>",
+          "value": "<p><b>Seggio di Montagna</b> [no. 43]</p><p>Map legend: «Seggio di Montagna»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2535,7 +2535,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Seggio di Nilo</b> [n. 44]</p><p>Legenda della mappa: «Seggio di Nido»</p>",
+          "value": "<p><b>Seggio di Nilo</b> [no. 44]</p><p>Map legend: «Seggio di Nido»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2573,7 +2573,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Seggio di Portanova</b> [n. 46]</p><p>Legenda della mappa: «Seggio di Porta Nova»</p>",
+          "value": "<p><b>Seggio di Portanova</b> [no. 46]</p><p>Map legend: «Seggio di Porta Nova»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2611,7 +2611,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Seggio di Porto</b> [n. 45]</p><p>Legenda della mappa: «Seggio di Porto»</p>",
+          "value": "<p><b>Seggio di Porto</b> [no. 45]</p><p>Map legend: «Seggio di Porto»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2649,7 +2649,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Strada Nilo</b> [n. 64]</p><p>Legenda della mappa: «Stra. di Seggio di Nido»</p>",
+          "value": "<p><b>Strada Nilo</b> [no. 64]</p><p>Map legend: «Stra. di Seggio di Nido»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2687,7 +2687,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Strada S. Lorenzo</b> [n. 65]</p><p>Legenda della mappa: «Stra. di S. Lore[n]zo alla Vicar.a»</p>",
+          "value": "<p><b>Strada S. Lorenzo</b> [no. 65]</p><p>Map legend: «Stra. di S. Lore[n]zo alla Vicar.a»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2725,7 +2725,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Strada della Incoronata</b> [n. 68]</p><p>Legenda della mappa: «Strada della Incoronata»</p>",
+          "value": "<p><b>Strada della Incoronata</b> [no. 68]</p><p>Map legend: «Strada della Incoronata»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2763,7 +2763,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Strada di Pozzo Bianco</b> [n. 66]</p><p>Legenda della mappa: «Stra di Pozzo Bianco»</p>",
+          "value": "<p><b>Strada di Pozzo Bianco</b> [no. 66]</p><p>Map legend: «Stra di Pozzo Bianco»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2801,7 +2801,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Strada di Toledo</b> [n. 67]</p><p>Legenda della mappa: «Strada di Toledo»</p>",
+          "value": "<p><b>Strada di Toledo</b> [no. 67]</p><p>Map legend: «Strada di Toledo»</p>",
           "format": "text/html",
           "purpose": "describing"
         },
@@ -2839,7 +2839,7 @@
       "body": [
         {
           "type": "TextualBody",
-          "value": "<p><b>Torre S. Vincenzo</b> [n. 13]</p><p>Legenda della mappa: «Torre san Vincenzo»</p>",
+          "value": "<p><b>Torre S. Vincenzo</b> [no. 13]</p><p>Map legend: «Torre san Vincenzo»</p>",
           "format": "text/html",
           "purpose": "describing"
         },

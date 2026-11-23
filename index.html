@@ -1,26 +1,53 @@
 <!doctype html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lafréry in Mirador</title>
-  <style>html, body, #viewer { margin: 0; height: 100%; }</style>
+  <style>
+    html, body { margin: 0; height: 100%; }
+    body { display: flex; flex-direction: column; font: 14px/1.2 system-ui, sans-serif; }
+    #layers { display: flex; align-items: center; gap: 8px; padding: 6px 12px;
+              background: #f5f5f5; border-bottom: 1px solid #ccc; }
+    #layers a { padding: 5px 12px; border: 1px solid #999; border-radius: 4px;
+                background: #fff; color: #222; text-decoration: none; }
+    #layers a[aria-current] { background: #1967d2; border-color: #1967d2; color: #fff; }
+    #viewer { position: relative; flex: 1; min-height: 0; }
+  </style>
 </head>
 <body>
+  <nav id="layers" aria-label="Annotation layers">
+    <span>Annotations:</span>
+    <a data-layer="1" title="Only the relation between the map and its own legend">Legend</a>
+    <a data-layer="2" title="Also the gazetteer links: other maps and historical guidebooks">Legend + Gazetteer</a>
+  </nav>
   <div id="viewer"></div>
   <script src="https://unpkg.com/mirador@3.4.3/dist/mirador.min.js"></script>
   <script>
-    const manifest = new URL('manifest.json', window.location.href).href;
+    const params = new URLSearchParams(location.search);
     const WINDOW_ID = 'lafrery';
-    const ZOOM_MARGIN = 1.6;  // l'annotazione occupa circa 1/1.6 della vista
+    const ZOOM_MARGIN = 1.6;  // the annotation takes up about 1/1.6 of the view
 
-    // Annotazioni visibili da subito (come sul sito Editing Naples). Si cambia dall'indirizzo:
-    // ?annotazioni=0 le mostra solo al passaggio del mouse; ?annotazioni=1 (predefinito) sempre.
-    // In Mirador si possono poi accendere e spegnere con l'icona a occhio nel pannello Annotazioni.
-    const MOSTRA_ANNOTAZIONI = new URLSearchParams(location.search).get('annotazioni') !== '0';
+    // Annotation layers: ?layer=1 (default) only the map and its legend; ?layer=2 also the
+    // gazetteer. Mirador 3.4.3 cannot switch a single AnnotationPage off (the overlay draws all
+    // the pages of the canvas), so each layer has its own manifest and the button reloads.
+    const LAYER = params.get('layer') === '2' ? '2' : '1';
+    const manifest = new URL(LAYER === '2' ? 'manifest.json' : 'manifest-legend.json',
+                             window.location.href).href;
+    document.querySelectorAll('#layers a').forEach(a => {
+      const p = new URLSearchParams(params);
+      p.set('layer', a.dataset.layer);
+      a.href = '?' + p;
+      if (a.dataset.layer === LAYER) a.setAttribute('aria-current', 'page');
+    });
 
-    // Come sul sito: niente contorno a riposo (stroke trasparente nei <path>),
-    // contorno giallo al passaggio del mouse e alla selezione
+    // Annotations visible from the start (as on the Editing Naples site). Changed from the URL:
+    // ?annotations=0 shows them on hover only; ?annotations=1 (default) always.
+    // In Mirador they can then be switched with the eye icon in the Annotations panel.
+    const SHOW_ANNOTATIONS = params.get('annotations') !== '0';
+
+    // As on the site: no outline at rest (transparent stroke in the <path> elements),
+    // yellow outline on hover and on selection
     const YELLOW = '#ffff00';
 
     const viewer = Mirador.viewer({
@@ -39,21 +66,26 @@
           selected: { strokeStyle: YELLOW, globalAlpha: 1 }
         } } }
       },
-      // Senza proxy il browser chiede le tessere a Digilib tutte insieme e Digilib risponde 503:
-      // al massimo 6 richieste per volta, con fino a 3 nuovi tentativi
+      // The Mirador list shows only these motivations: `linking`, used by the gazetteer
+      // annotations, has to be added to the defaults
+      annotations: {
+        filteredMotivations: ['oa:commenting', 'oa:tagging', 'sc:painting', 'commenting', 'tagging', 'linking']
+      },
+      // Without a proxy the browser requests all tiles from Digilib at once and Digilib answers 503:
+      // at most 6 requests at a time, with up to 3 retries
       osdConfig: {
         imageLoaderLimit: 6,
         tileRetryMax: 3,
         tileRetryDelay: 1500
       },
       window: {
-        highlightAllAnnotations: MOSTRA_ANNOTAZIONI,
+        highlightAllAnnotations: SHOW_ANNOTATIONS,
         sideBarOpenByDefault: true,
         defaultSideBarPanel: 'annotations'
       }
     });
 
-    // Zoom sull'annotazione selezionata, dalla mappa o dall'elenco
+    // Zoom to the selected annotation, from the map or from the list
     function zoomTo([x, y, w, h]) {
       const view = document.querySelector('.openseadragon-container');
       if (!view) return;
@@ -65,19 +97,27 @@
       }));
     }
 
-    fetch('annotations.json').then(r => r.json()).then(page => {
-      const boxes = new Map(page.items.map(a => {
-        const { value } = a.target.selector.find(s => s.type === 'FragmentSelector');
-        return [a.id, value.replace('xywh=', '').split(',').map(Number)];
-      }));
-      let selected = null;
-      viewer.store.subscribe(() => {
-        const win = viewer.store.getState().windows[WINDOW_ID];
-        const id = win ? win.selectedAnnotationId : null;
-        if (id === selected) return;
-        selected = id;
-        if (boxes.has(id)) zoomTo(boxes.get(id));
-      });
+    // xywh box of an annotation, looked up in all the AnnotationPages loaded by Mirador
+    // (one or two, depending on the layer): no file names to keep in sync
+    function boxOf(id) {
+      const pages = Object.values(viewer.store.getState().annotations || {}).flatMap(Object.values);
+      for (const page of pages) {
+        const anno = ((page.json && page.json.items) || []).find(a => a.id === id);
+        if (!anno) continue;
+        const sel = [].concat(anno.target.selector).find(s => s.type === 'FragmentSelector');
+        return sel ? sel.value.replace('xywh=', '').split(',').map(Number) : null;
+      }
+      return null;
+    }
+
+    let selected = null;
+    viewer.store.subscribe(() => {
+      const win = viewer.store.getState().windows[WINDOW_ID];
+      const id = win ? win.selectedAnnotationId : null;
+      if (id === selected) return;
+      selected = id;
+      const box = id && boxOf(id);
+      if (box) zoomTo(box);
     });
   </script>
 </body>

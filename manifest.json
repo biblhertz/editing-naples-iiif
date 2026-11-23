@@ -3,15 +3,15 @@
   "id": "https://biblhertz.github.io/editing-naples-iiif/manifest.json",
   "type": "Manifest",
   "label": {
-    "it": [
+    "en": [
       "Du Perac/Lafréry 1566"
     ]
   },
   "metadata": [
     {
       "label": {
-        "it": [
-          "Titolo"
+        "en": [
+          "Title"
         ]
       },
       "value": {
@@ -22,8 +22,8 @@
     },
     {
       "label": {
-        "it": [
-          "Autore"
+        "en": [
+          "Author"
         ]
       },
       "value": {
@@ -34,8 +34,8 @@
     },
     {
       "label": {
-        "it": [
-          "Incisore"
+        "en": [
+          "Engraver"
         ]
       },
       "value": {
@@ -46,8 +46,8 @@
     },
     {
       "label": {
-        "it": [
-          "Editore"
+        "en": [
+          "Publisher"
         ]
       },
       "value": {
@@ -58,8 +58,8 @@
     },
     {
       "label": {
-        "it": [
-          "Data"
+        "en": [
+          "Date"
         ]
       },
       "value": {
@@ -70,8 +70,8 @@
     },
     {
       "label": {
-        "it": [
-          "Tecnica"
+        "en": [
+          "Technique"
         ]
       },
       "value": {
@@ -82,8 +82,8 @@
     },
     {
       "label": {
-        "it": [
-          "Tipo"
+        "en": [
+          "Type"
         ]
       },
       "value": {
@@ -94,8 +94,8 @@
     },
     {
       "label": {
-        "it": [
-          "Dimensioni (mm)"
+        "en": [
+          "Dimensions (mm)"
         ]
       },
       "value": {
@@ -106,8 +106,8 @@
     },
     {
       "label": {
-        "it": [
-          "Collocazione"
+        "en": [
+          "Location"
         ]
       },
       "value": {
@@ -118,8 +118,8 @@
     },
     {
       "label": {
-        "it": [
-          "Annotazioni di"
+        "en": [
+          "Annotations by"
         ]
       },
       "value": {
@@ -130,7 +130,7 @@
     },
     {
       "label": {
-        "it": [
+        "en": [
           "DOI"
         ]
       },
@@ -143,12 +143,12 @@
   ],
   "requiredStatement": {
     "label": {
-      "it": [
-        "Fonte"
+      "en": [
+        "Source"
       ]
     },
     "value": {
-      "it": [
+      "en": [
         "Bibliotheca Hertziana, Editing Naples"
       ]
     }
@@ -159,8 +159,8 @@
       "type": "Text",
       "format": "text/html",
       "label": {
-        "it": [
-          "Applicazione Editing Naples"
+        "en": [
+          "Editing Naples application"
         ]
       }
     }
@@ -206,8 +206,22 @@
       ],
       "annotations": [
         {
-          "id": "https://biblhertz.github.io/editing-naples-iiif/annotations.json",
-          "type": "AnnotationPage"
+          "id": "https://biblhertz.github.io/editing-naples-iiif/annotations-gazetteer.json",
+          "type": "AnnotationPage",
+          "label": {
+            "en": [
+              "Gazetteer: other maps and guidebooks"
+            ]
+          }
+        },
+        {
+          "id": "https://biblhertz.github.io/editing-naples-iiif/annotations-legend.json",
+          "type": "AnnotationPage",
+          "label": {
+            "en": [
+              "Map legend"
+            ]
+          }
         }
       ]
     }
