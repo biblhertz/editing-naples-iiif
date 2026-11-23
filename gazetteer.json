@@ -1,0 +1,25 @@
+{
+  "5940": {
+    "top_id": "18",
+    "uri": "https://maps.biblhertz.it/top/18",
+    "title": "Chiesa e convento di S. Chiara",
+    "location": "Napoli, Decumano",
+    "category": "chiesa",
+    "dates": "1310-",
+    "notes": "Chiesa di Santa Chiara",
+    "guides": [
+      {"ref": "De Stefano (1560), 179v", "quote": "Santa Chiara", "url": "https://maps.biblhertz.it/guide/destefano#par_312"},
+      {"ref": "Tarcagnota (1566), 10r", "quote": "Santa Chiara", "url": "https://maps.biblhertz.it/guide/tarcagnota#par_25"},
+      {"ref": "Tarcagnota (1566), 10v", "quote": "Santa Chiara", "url": "https://maps.biblhertz.it/guide/tarcagnota#par_25"},
+      {"ref": "Tarcagnota (1566), 28v", "quote": "chiesa", "url": "https://maps.biblhertz.it/guide/tarcagnota#par_65"},
+      {"ref": "Celano (1692), 63", "quote": "chiesa regale di Santa Chiara", "url": "https://maps.biblhertz.it/guide/celano#par_III-121"},
+      {"ref": "Sigismondo (1788), 254", "quote": "chiesa", "url": "https://maps.biblhertz.it/guide/sigismondo#par_I-117"},
+      {"ref": "Sigismondo (1788), 254", "quote": "Santa Chiara", "url": "https://maps.biblhertz.it/guide/sigismondo#h2_I-12"}
+    ],
+    "maps": [
+      {"map": "Duca di Noja 1775, n. 107", "url": "https://maps.biblhertz.it/map?name=noia&id=95", "legend": "Chiesa di Santa Chiara, monasterio di dame monache e convento di francescani, che la servono. Questa fu anticamente sacra al Santissimo Corpo di Cristo, e fu fondata dal re Roberto Angioino e da Sancia d’Aragona sua moglie; in questa chiesa èvvi ’l sepolcro del mentovato re. Ne’ tempi antichi quivi univasi il Sacro Regio Consiglio a decidere le cause de’ napolitani."},
+      {"map": "Baratta 1627/1670, n. 99", "url": "https://maps.biblhertz.it/map?name=baratta&id=1298", "legend": "S. Chiara"},
+      {"map": "Stinemolen 1582", "url": "https://maps.biblhertz.it/map?name=stinemolen&id=1518"}
+    ]
+  }
+}
